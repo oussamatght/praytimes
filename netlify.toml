@@ -1,0 +1,7 @@
+ command = "npm run build"
+publish="/build"
+base = "/"
+[[redirects]]
+from ="/*"
+to = "/pray.html"
+status = 200
