@@ -20,9 +20,7 @@ body {
     text-align: center;
 }
 
-h1,
-h2,
-h3,
+h1,h2,h3,
 h4,
 h5,
 h6 {
@@ -105,14 +103,9 @@ option {
         justify-content: space-around;
     }
     #card {
-        background: #5200e1;
-        height: 170px;
-        width: 160px;
-        border-radius: 20px;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        background-color: white;
+     
+       
+        border-radius:20px;       
     }
     #first {
         text-align: center;
@@ -138,8 +131,3 @@ option {
     }
 }
 
-@media screen and (max-width: 250px) {
-    #cards {
-        margin-left: 20px;
-    }
-}
