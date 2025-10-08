@@ -1,133 +1,215 @@
+:root {
+    --bg: linear-gradient(135deg, #240165, #05001c);
+    --text-color: #fff;
+    --card-bg: rgba(255, 255, 255, 0.12);
+    --highlight: #ffea00;
+}
+
+body.light {
+    --bg: linear-gradient(135deg, #e6e9ff, #ffffff);
+    --text-color: #111;
+    --card-bg: rgba(0, 0, 0, 0.05);
+    --highlight: #6a00ff;
+}
+
 body {
-    background: linear-gradient(45deg, #240165, #05001c);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    box-sizing: border-box;
+    margin: 0;
+    font-family: "Tajawal", sans-serif;
+    background: var(--bg);
+    color: var(--text-color);
+    transition: background 0.6s, color 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-#time {
-    font-size: 120px;
-    color: white;
+.container {
+    width: 95%;
+    max-width: 900px;
+    backdrop-filter: blur(15px);
+    background: var(--card-bg);
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.city-block h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.city-block p {
+    margin: 5px 0;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.controls button {
+    background: var(--highlight);
+    color: #000;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+}
+
+.clock-container {
+    margin-top: 15px;
+}
+
+.digital-clock {
+    font-size: 2.2rem;
     font-weight: 700;
+    letter-spacing: 2px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 10px 20px;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-#date {
-    font-size: 30px;
-    font-weight: 200;
-    color: white;
-}
-
-#head {
+.next-section {
     text-align: center;
+    margin: 30px 0 20px;
 }
 
-h1,h2,h3,
-h4,
-h5,
-h6 {
-    margin: 0px;
+.countdown-box {
+    margin-top: 10px;
 }
 
-hr {
-    margin: 0px 50px;
-    border-color: white;
-    opacity: 0.2;
+#nextName {
+    font-size: 1.6rem;
+    color: var(--highlight);
+    margin: 8px 0;
 }
 
-#cards {
-    display: flex;
-    margin-top: 20px;
-    justify-content: space-around;
+.countdown-circle {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px 30px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.3);
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
-#card {
-    background: #5200e1;
-    height: 170px;
-    width: 160px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    background-color: white;
+.prayer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    justify-content: center;
 }
 
-#last {
+.card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 20px;
     text-align: center;
-    margin-top: 40px;
-    font-size: 40px;
-    color: black;
+    transition: 0.3s ease;
 }
 
-#first {
-    border: #05001c 1px solid;
-    background: linear-gradient(45deg, #5709ee, #7a37bf);
-    height: 40px;
-    font-size: 30px;
+.card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.25);
 }
 
-label {
-    font-size: 30px;
-    color: white;
-    text-align: center;
+.card h2 {
+    color: var(--highlight);
+    font-size: 1.3rem;
+}
+
+.card h1 {
+    font-size: 1.9rem;
+    margin-top: 10px;
 }
 
 #footer {
+    margin-top: 30px;
     text-align: center;
-    font-size: 40px;
-    color: black;
+}
+
+.city-selector {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 20px;
+    display: inline-block;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.city-selector h2 {
+    color: var(--highlight);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.custom-select {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 10px 15px;
+}
+
+.icon {
+    margin-left: 10px;
 }
 
 #mySelect {
-    border: #05001c 1px solid;
-    background: linear-gradient(45deg, #5709ee, #7a37bf);
-    height: 40px;
-    width: 200px;
-    font-size: 30px;
-    border-radius: 20px;
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1rem;
     cursor: pointer;
+    outline: none;
+    width: 180px;
 }
 
-option {
-    border-radius: 20px;
-    font-size: 30px;
-    background-color: #05001c;
-    color: white;
-    cursor: pointer;
+#mySelect option {
+    background-color: #1a003a;
+    color: #fff;
 }
 
-@media only screen and (max-width: 450px) {
-    #cards {
-        display: flex;
-        flex-direction: column;
-        margin-left: 40px;
-        text-align: center;
-        justify-content: space-around;
+@media (max-width: 600px) {
+    .city-block h1 {
+        font-size: 1.8rem;
     }
-    #card {
-     
-       
-        border-radius:20px;       
+    .digital-clock {
+        font-size: 1.5rem;
     }
-    #first {
-        text-align: center;
+    .card h1 {
+        font-size: 1.5rem;
     }
-    #time {
-        text-align: center;
-        font-size: 67px;
+    .card h2 {
+        font-size: 1.1rem;
     }
-    option {
-        font-size: 20px;
+    .countdown-circle {
+        font-size: 1.2rem;
+        padding: 15px 20px;
     }
-    #mySelect {
-        font-size: 25px;
+    .controls button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
     }
 }
-
-@media screen and (max-width: 400px) {
-    #cards {
-        margin-left: 65px;
-    }
-    #card {
-        width: 200px;
-    }
-}
-
