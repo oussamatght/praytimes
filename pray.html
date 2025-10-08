@@ -1,68 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="pray.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>prayer times</title>
+    <title>مواقيت الصلاة | Prayer Times</title>
+    <link rel="stylesheet" href="pray.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
-<body style="">
-    <div>
+<body>
+    <div class="container">
 
-        <div id="prayer" style="margin-top: 30px;">
-            <div id="head">
-
-                <h1 id="time">الجزائر</h1>
-                <h6 id="date"> </h6>
+        <header class="header">
+            <div class="top-bar">
+                <div class="city-block">
+                    <h1 id="city-name">الجزائر</h1>
+                    <p id="date">--/--/----</p>
+                </div>
+                <div class="controls">
+                    <button id="langToggle">🌐 English</button>
+                    <button id="themeToggle">🌙</button>
+                </div>
             </div>
-            <hr>
-            <div id="cards">
-                <div id="card">
-                    <h2 id="first">الفجر</h2>
-                    <h1 id="last" class="fajr">03:37</h1>
-                </div>
 
-                <div id="card">
-                    <h2 id="first">الشروق</h2>
-                    <h1 id="last" class="sunrise">05:29</h1>
+            <div class="clock-container">
+                <div class="digital-clock">
+                    <span id="clock">--:--:--</span>
                 </div>
-
-                <div id="card">
-                    <h2 id="first">الظهر </h2>
-                    <h1 id="last" class="dhuhr">12:49</h1>
-                </div>
-
-                <div id="card">
-                    <h2 id="first">العصر</h2>
-                    <h1 id="last" class="asr">16:40</h1>
-                </div>
-                <div id="card">
-                    <h2 id="first">المغرب
-                    </h2>
-                    <h1 id="last" class="moghrib">20:09</h1>
-                </div>
-                <div id="card">
-                    <h2 id="first">العشاء</h2>
-                    <h1 id="last" class="icha"> 21:53</h1>
-                </div>
-
-
             </div>
-            <div id="footer">
-                <label for="mySelect" style="display:block; margin-bottom:5px;">اختر المدينة</label>
-                <select name="" id="mySelect">
-            
-                </select>
+        </header>
+
+        <section id="nextPrayer" class="next-section">
+            <h2 id="next-label">الصلاة القادمة</h2>
+            <div class="countdown-box">
+                <h3 id="nextName">--</h3>
+                <div class="countdown-circle">
+                    <span id="countdown">00:00:00</span>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section id="cards" class="prayer-grid"></section>
+
+        <footer id="footer">
+            <div class="city-selector">
+                <h2 id="city-label"> اختر مدينتك</h2>
+                <div class="custom-select">
+                    <i class="icon">🏙️</i>
+                    <select id="mySelect"></select>
+                </div>
+            </div>
+        </footer>
+
     </div>
-    </div>
-    <script src="./node_modules/axios/dist/axios.min.js"></script>
-    <script src="pray.js">
-    </script>
 
+    <script src="pray.js"></script>
 </body>
 
 </html>
