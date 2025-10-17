@@ -1,5 +1,5 @@
 🕌 Prayer Times Web App
-🌐 the HOST : https://visionary-youtiao-4b7e44.netlify.app/
+🌐 the HOST :https://praytimes-ztwn.vercel.app/
 
 A modern, bilingual, and responsive web application that displays accurate Islamic prayer times for all Algerian cities.
 It features a live digital clock, next prayer countdown, dark/light themes, and a clean glassmorphism design.
