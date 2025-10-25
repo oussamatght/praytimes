@@ -1,61 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مواقيت الصلاة | Prayer Times</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>مواقيت الصلاة — Modern Islamic</title>
+    <meta name="description" content="Modern Islamic prayer times widget with auto-location and responsive design.">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="pray.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    </style>
 </head>
 
 <body>
-    <div class="container">
-
-        <header class="header">
-            <div class="top-bar">
-                <div class="city-block">
-                    <h1 id="city-name">الجزائر</h1>
-                    <p id="date">--/--/----</p>
-                </div>
-                <div class="controls">
-                    <button id="langToggle">🌐 English</button>
-                    <button id="themeToggle">🌙</button>
+    <div class="app">
+        <div class="top">
+            <div class="brand">
+                <div class="logo">م</div>
+                <div>
+                    <h1>مواقيت الصلاة</h1>
+                    <p id="cityLine">—</p>
                 </div>
             </div>
 
-            <div class="clock-container">
-                <div class="digital-clock">
-                    <span id="clock">--:--:--</span>
+            <div class="controls">
+                <button class="btn" id="locBtn">📍 استخدم موقعي</button>
+                <button class="btn" id="refreshBtn">🔁 تحديث</button>
+                <button class="btn" id="themeToggle">☾</button>
+                <button class="btn" id="langToggle">EN</button>
+            </div>
+        </div>
+
+        <div class="clock-area">
+            <div class="left-col">
+                <div class="clock-card">
+                    <div class="clock-time" id="bigClock">--:--:--</div>
+                    <div class="clock-sub" id="tzLabel">الوقت المحلي</div>
+                </div>
+                <div class="grid" id="prayerGrid"></div>
+            </div>
+
+            <div class="next-card">
+                <h3 id="nextLabel">الصلاة القادمة</h3>
+                <div id="nextPrayerName">—</div>
+                <div id="countdown">00:00:00</div>
+
+                <div style="margin-top:12px">
+                    <div class="hint">طريقة الحساب</div>
+                    <select id="method">
+            <option value="2">ISNA</option>
+            <option value="3">Egyptian General Authority</option>
+            <option value="4">Umm Al-Qura</option>
+            <option value="8">University of Islamic Sciences</option>
+            <option value="19" selected>Moonsighting / Local</option>
+          </select>
                 </div>
             </div>
-        </header>
+        </div>
 
-        <section id="nextPrayer" class="next-section">
-            <h2 id="next-label">الصلاة القادمة</h2>
-            <div class="countdown-box">
-                <h3 id="nextName">--</h3>
-                <div class="countdown-circle">
-                    <span id="countdown">00:00:00</span>
-                </div>
+        <div class="footer">
+            <div style="display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap">
+                <label for="citySelect" class="hint">اختر مدينتك</label>
+                <select id="citySelect"></select>
             </div>
-        </section>
-
-        <section id="cards" class="prayer-grid"></section>
-
-        <footer id="footer">
-            <div class="city-selector">
-                <h2 id="city-label"> اختر مدينتك</h2>
-                <div class="custom-select">
-                    <i class="icon">🏙️</i>
-                    <select id="mySelect"></select>
-                </div>
-            </div>
-        </footer>
-
+            <div class="hint" id="statusMsg">انتظار الموقع...</div>
+        </div>
     </div>
 
-    <script src="pray.js"></script>
-</body>
 
-</html>
+<script src="pray.js"></script>
